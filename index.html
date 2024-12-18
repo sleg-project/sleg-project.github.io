@@ -1,12 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SLEG Home</title>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="SLEG: Scaling Langiage Embedded Gaussian Splatting.">
+  <meta name="keywords" content="Gaussian Splatting, Semantic Understanding, Langiage Embedding, Robotics">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SLEG</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<!--  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>-->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/youtube-carousel.css">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+<!--  <link rel="icon" href="./static/images/favicon.svg">-->
+
+  <script src="./static/js/youtube-carousel.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
 </head>
 <body>
-  <h1>Welcome to SLEG</h1>
-  <p>This is my GitHub-hosted website.</p>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">SLEG <br>
+            <p class="title is-3 publication-title">Scaling Language Embedded Gaussian Splatting</p>
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://laszilagyi.github.io/">Laszlo Szilagyi</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://francisengelmann.github.io/">Francis Engelmann</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://web.stanford.edu/~bohg/">Jeannette Bohg</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block" style="margin-right: 1em;"><sup>1</sup>Stanford University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2404.12440.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2404.12440"
+                   class="external-link button is-normal is-rounded is-dark disabled-link">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!--<span class="link-block">
+                <a href="https://www.youtube.com/watch?v=4BRKIzyaT3o"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>-->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/oliver-lemke/spot-compose"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (coming soon)</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img id="teaser" src="./static/images/teaser.jpg" alt="Teaser" style="width: 100%; height: auto;">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">SLEG</span> is a scalable method for embedding language features into Gaussian splatting scene representations, leveraging multi-GPU setups to accelerate semantic embedding and overcome the memory limitations of single-GPU systems.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Language-augmented scene representations hold significant potential for robotics applications such as search and rescue, smart cities, and mining, where fast, natural language-based queries over large areas are crucial.
+            Existing methods often struggle with slow embedding speeds and limited scene sizes due to single-GPU constraints.
+            Additionally, deploying these embeddings on resource-constrained edge devices like NVIDIA Jetson remains a challenge. 
+          </p>
+          <p>
+            To address these issues, we propose a multi-GPU framework for language-augmented Gaussian splatting, enabling faster, scalable embedding of large scenes. We build on prior methods that map 2D visual-language model embeddings to 3D scenes using SAM and CLIP.
+            Unlike approaches that rely on optimization-based embedding computation, our method simplifies the process by computing embeddings as a normalized, weighted sum of masked language features across multiple viewpoints.
+            We also integrate a vector database for efficient storage and retrieval of embeddings, with a partitioning mechanism to support deployment on mobile robots with limited resources.
+            Our experiments show an 18x speedup in embedding computation on a 16-GPU setup while achieving state-of-the-art embedding quality.
+            These results highlight the effectiveness of our method for real-world robotics applications.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="title is-4"></h2>
+    <br>
+    <div class="columns is-centered">
+      <img id="result_grasp" src="./static/images/semantic_embedding.jpg" alt="exp_grasp" style="width: 100%; height: auto;">
+    </div>
+    <br>
+
+  </div>
+  <!-- Results -->
+  <br>
+  <br>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Quantitative Results</h2>
+      </div>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        SLEG achieves significant speedup in embedding while maintaining state-of-the-art embedding performance.
+      </p>
+    </div>
+    <!-- Speedup -->
+    <h2 class="title is-4">Scene embedding time</h2>
+    <br>
+    <div class="columns is-centered">
+      <img id="result_grasp" src="./static/images/sleg_og_stats_16gpu_s.jpg" alt="exp_grasp" style="width: 60%; height: auto;">
+    </div>
+    <br>
+    <!-- Quality -->
+    <h2 class="title is-4">Semantic segmentation evaluation with ScanNet</h2>
+    <br>
+    <div class="columns is-centered">
+      <img id="result_drawers" src="./static/images/sleg_eval_scannet.jpg" alt="exp_drawers" style="width: 60%; height: auto;">
+    </div>
+    <br>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{lemke2024spotcompose,
+  title={Spot-Compose: A Framework for Open-Vocabulary Object Retrieval and Drawer Manipulation in Point Clouds},
+  author={Oliver Lemke and Zuria Bauer and Ren{\'e} Zurbr{\"u}gg and Marc Pollefeys and Francis Engelmann and Hermann Blum},
+  booktitle={2nd Workshop on Mobile Manipulation and Embodied Intelligence at ICRA 2024},
+  year={2024},
+  url={https://openreview.net/forum?id=DoKoCqOts2}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            It borrows the source code of <a href="https://github.com/nerfies/nerfies.github.io">this website</a>.
+            We would like to thank Utkarsh Sinha and Keunhong Park.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
