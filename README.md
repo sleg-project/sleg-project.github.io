@@ -1,8 +1,8 @@
 # Spot-Compose
 
-This is the repository that contains source code for the [Spot-Compose website](https://spot-compose.github.io/).
+This is the repository that contains source code for the [SLEG project website](https://sleg-project.github.io/).
 
-If you find Spot-Compose useful for your work please cite:
+If you find SLEG useful for your work please cite:
 ```
 @inproceedings{lemke2024spotcompose,
   title={Spot-Compose: A Framework for Open-Vocabulary Object Retrieval and Drawer Manipulation in Point Clouds},
