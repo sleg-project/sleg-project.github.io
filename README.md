@@ -4,12 +4,12 @@ This is the repository that contains source code for the [SLEG project website](
 
 If you find SLEG useful for your work please cite:
 ```
-@inproceedings{lemke2024spotcompose,
-  title={Spot-Compose: A Framework for Open-Vocabulary Object Retrieval and Drawer Manipulation in Point Clouds},
-  author={Oliver Lemke and Zuria Bauer and Ren{\'e} Zurbr{\"u}gg and Marc Pollefeys and Francis Engelmann and Hermann Blum},
-  booktitle={2nd Workshop on Mobile Manipulation and Embodied Intelligence at ICRA 2024},
-  year={2024},
-  url={https://openreview.net/forum?id=DoKoCqOts2}
+@article{szilagyi2024sleg,
+  title={SLEG: Scaling Language Embedded Gaussian Splatting},
+  author={Laszlo Szilagyi, Francis Engelmann and Jeannette Bohg},
+  booktitle={},
+  year={},
+  url={}
 }
 ```
 
