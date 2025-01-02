@@ -1,4 +1,4 @@
-# Spot-Compose
+# SLEG: Scaling Language Embedded Gaussian Splatting
 
 This is the repository that contains source code for the [SLEG project website](https://sleg-project.github.io/).
 
