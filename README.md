@@ -1,15 +1,15 @@
-# SLEG: Scaling Language Embedded Gaussian Splatting
+# SLAG: Scalable Language-Augmented Gaussian Splatting
 
-This is the repository that contains source code for the [SLEG project website](https://sleg-project.github.io/).
+This is the repository that contains source code for the [SLAG project website](https://slag-project.github.io/).
 
-If you find SLEG useful for your work please cite:
+If you find SLAG useful for your work please cite:
 ```
-@article{szilagyi2024sleg,
-  title={SLEG: Scaling Language Embedded Gaussian Splatting},
-  author={Laszlo Szilagyi, Francis Engelmann and Jeannette Bohg},
-  booktitle={},
-  year={},
-  url={}
+@article{szilagyi2025slag,
+  title={SLAG: Scalable Language-Augmented Gaussian Splatting}, 
+  author={Szilagyi, Laszlo and Engelmann, Francis and Bohg, Jeannette},
+  journal={IEEE Robotics and Automation Letters}, 
+  year={2025},
+  doi={10.1109/LRA.2025.3573203}
 }
 ```
 
