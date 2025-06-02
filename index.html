@@ -119,20 +119,29 @@
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <img id="teaser" src="./static/images/teaser.jpg" alt="Teaser" style="width: 100%; height: auto;">
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">SLAG</span> is a scalable method for augmenting large Gaussian splatting scenes with language features, leveraging multi-GPU setups to accelerate processing and overcome the memory limitations of single-GPU systems.
-      </h2>
-    </div>
-  </div>
-</section>
-
 
 <section class="section">
   <div class="container is-max-desktop">
+
+    <h2 class="subtitle has-text-centered">
+      <span class="dnerf">SLAG</span> is a scalable method for augmenting large Gaussian splatting scenes with language features, leveraging multi-GPU setups to accelerate processing and overcome the memory limitations of single-GPU systems.
+    </h2>
+    <!-- Method figure -->
+    <br>
+    <div class="columns is-centered">
+      <div class="column is-10 has-text-centered">
+        <figure>
+          <img id="result_grasp" src="./static/images/teaser.jpg" alt="exp_grasp" style="width: 100%; height: auto;">
+          <figcaption class="subtitle is-6 has-text-centered mt-2">
+            SLAG computes embeddings as normalized weighted averages of Gaussian parameters, enabling fully parallel processing (SAM-CLIP-Rasterization-Masking) with a simple aggregation step at the end.
+            Bottom: LERF teatime, figurines and MegaNerf rubble scenes with corresponding query words and query responses.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <br>
+
+
     <!-- Abstract -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -142,9 +151,18 @@
             Language-augmented scene representations hold great promise for large-scale robotics applications such as search-and-rescue, smart cities, and mining.
             Many of these scenarios are time-sensitive, requiring rapid scene encoding while also being data-intensive, necessitating scalable solutions.
             Deploying these representations on robots with limited computational resources further adds to the challenge.  
+            To address this, we introduce SLAG, a multi-GPU framework for language-augmented Gaussian splatting that enhances the speed and scalability of embedding large scenes. 
           </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Method overview -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method Overview</h2>
+        <div class="content has-text-justified">
           <p>
-            To address this, we introduce SLAG, a multi-GPU framework for language-augmented Gaussian splatting that enhances the speed and scalability of embedding large scenes.
             Our method integrates 2D visual-language model features into 3D scenes using SAM and CLIP.
             Unlike prior approaches, SLAG eliminates the need for a loss function to compute per-Gaussian language embeddings.
             Instead, it derives embeddings from 3D Gaussian scene parameters via a normalized weighted average, enabling highly parallelized scene encoding.
@@ -155,42 +173,60 @@
       </div>
     </div>
 
-    <h2 class="title is-4"></h2>
+    <!-- Method figure -->
     <br>
     <div class="columns is-centered">
-      <img id="result_grasp" src="./static/images/semantic_embedding.jpg" alt="exp_grasp" style="width: 100%; height: auto;">
+      <div class="column is-11 has-text-centered">
+        <figure>
+          <img id="result_grasp" src="./static/images/semantic_embedding.jpg" alt="exp_grasp" style="width: 100%; height: auto;">
+          <figcaption class="subtitle is-6 has-text-centered mt-2">
+            Scene encoding flow with the SAM-CLIP-Rasterization-Parameter Masking phase and the Aggregation phase.
+          </figcaption>
+        </figure>
+      </div>
     </div>
     <br>
 
-  </div>
-  <!-- Results -->
-  <br>
-  <br>
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full-width">
+    <!-- Quantitative Results -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
         <h2 class="title is-3">Quantitative Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            SLAG achieves significant speedup in embedding while maintaining state-of-the-art embedding performance.
+            Our experiments show that SLAG achieves an 18× speedup in embedding computation on a 16-GPU setup compared to OpenGaussian, while preserving embedding quality on the ScanNet and LERF datasets.
+          </p>
+        </div>
       </div>
     </div>
-    <div class="content has-text-justified">
-      <p>
-        SLAG achieves significant speedup in embedding while maintaining state-of-the-art embedding performance.
-      </p>
-    </div>
+
     <!-- Speedup -->
-    <h2 class="title is-4">Scene embedding time</h2>
     <br>
     <div class="columns is-centered">
-      <img id="result_grasp" src="./static/images/sleg_og_stats_16gpu_s.jpg" alt="exp_grasp" style="width: 60%; height: auto;">
+      <div class="column is-8 has-text-centered">
+        <figure>
+          <img id="result_grasp" src="./static/images/sleg_og_stats_16gpu_s.jpg" alt="exp_grasp" style="width: 100%; height: auto;">
+          <figcaption class="subtitle is-6 has-text-centered mt-2">
+            Scene encoding time comparison of OpenGaussians with 1 GPU, SLAG with 1 GPU and SLAG with 16 GPUs (units are seconds). SLAG is 1.4× faster with 1 GPU and 19× faster with 16 GPUs.
+          </figcaption>
+        </figure>
+      </div>
     </div>
     <br>
     <!-- Quality -->
-    <h2 class="title is-4">Semantic segmentation evaluation with ScanNet</h2>
     <br>
     <div class="columns is-centered">
-      <img id="result_drawers" src="./static/images/sleg_eval_scannet.jpg" alt="exp_drawers" style="width: 60%; height: auto;">
+      <div class="column is-8 has-text-centered">
+        <figure>
+          <img id="result_grasp" src="./static/images/sleg_eval_lerf.jpg" alt="exp_grasp" style="width: 100%; height: auto;">
+          <figcaption class="subtitle is-6 has-text-centered mt-2">
+            3D binary open vocabulary segmentation scores on LERF. SLAG is on par with state of the art methods.
+          </figcaption>
+        </figure>
+      </div>
     </div>
     <br>
+    
   </div>
 </section>
 
