@@ -124,7 +124,8 @@
   <div class="container is-max-desktop">
 
     <h2 class="subtitle has-text-centered">
-      <span class="dnerf">SLAG</span> is a scalable method for augmenting large Gaussian splatting scenes with language features, leveraging multi-GPU setups to accelerate processing and overcome the memory limitations of single-GPU systems.
+      <span class="dnerf">SLAG</span> is a scalable method for augmenting large Gaussian splatting scenes with language features.
+      Our method leverages multi-GPU setups to accelerate scene encoding and overcome the memory limitations of single-GPU systems.
     </h2>
     <!-- Method figure -->
     <br>
@@ -149,9 +150,10 @@
         <div class="content has-text-justified">
           <p>
             Language-augmented scene representations hold great promise for large-scale robotics applications such as search-and-rescue, smart cities, and mining.
-            Many of these scenarios are time-sensitive, requiring rapid scene encoding while also being data-intensive, necessitating scalable solutions.
-            Deploying these representations on robots with limited computational resources further adds to the challenge.  
-            To address this, we introduce SLAG, a multi-GPU framework for language-augmented Gaussian splatting that enhances the speed and scalability of embedding large scenes. 
+            By enabling open-vocabulary natural language queries, language-augmented Gaussian splatting allows retrieval of semantic information from large 3D scenes and integration with LLM agents.
+            Many of these use cases are time-sensitive and data-intensive, demanding both rapid scene encoding and scalablility.
+            Deploying such representationson for inference on robots with limited computational resources further compounds the challenge.
+            To address this, we introduce SLAG—a multi-GPU framework for language-augmented Gaussian splatting that significantly improves the speed and scalability of language-augmenting large 3D Gaussian scenes.
           </p>
         </div>
       </div>
@@ -167,7 +169,6 @@
             Unlike prior approaches, SLAG eliminates the need for a loss function to compute per-Gaussian language embeddings.
             Instead, it derives embeddings from 3D Gaussian scene parameters via a normalized weighted average, enabling highly parallelized scene encoding.
             Additionally, we introduce a vector database for efficient embedding storage and retrieval.
-            Our experiments show that SLAG achieves an 18× speedup in embedding computation on a 16-GPU setup compared to OpenGaussian, while preserving embedding quality on the ScanNet and LERF datasets.
           </p>
         </div>
       </div>
