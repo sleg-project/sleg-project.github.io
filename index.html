@@ -168,7 +168,8 @@
             Our method integrates 2D visual-language model features into 3D scenes using SAM and CLIP.
             Unlike prior approaches, SLAG eliminates the need for a loss function to compute per-Gaussian language embeddings.
             Instead, it derives embeddings from 3D Gaussian scene parameters via a normalized weighted average, enabling highly parallelized scene encoding.
-            Additionally, we introduce a vector database for efficient embedding storage and retrieval.
+            Additionally, we introduce a vector database for efficient language embedding feature storage and inference retrieval.
+            To further improve scalability, we introduce a vector database that stores language embeddings for fast and efficient querying at inference time.
           </p>
         </div>
       </div>
@@ -194,8 +195,8 @@
         <h2 class="title is-3">Quantitative Results</h2>
         <div class="content has-text-justified">
           <p>
-            SLAG achieves significant speedup in embedding while maintaining state-of-the-art embedding performance.
-            Our experiments show that SLAG achieves an 18× speedup in embedding computation on a 16-GPU setup compared to OpenGaussian, while preserving embedding quality on the ScanNet and LERF datasets.
+            SLAG significantly accelerates scene encoding while maintaining state-of-the-art open-vocabulary segmentation performance.
+            Our experiments demonstrate an 19× speedup in scene encoding on a 16-GPU setup compared to OpenGaussian, with no loss in embedding quality on the ScanNet and LERF datasets.
           </p>
         </div>
       </div>
